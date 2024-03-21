@@ -1,6 +1,6 @@
 
 
-## Project Name: Redux Mastery
+## Project Name: Redux Tasker
 
 
 
