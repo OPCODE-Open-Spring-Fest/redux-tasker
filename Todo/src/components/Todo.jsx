@@ -25,7 +25,8 @@ const Todo = () => {
   };
 
   const handleSearchChange = (value) => {
-  
+       setSearchTerm(value);
+       dispatch(updateSearchTerm(value));
   };
 
   return (
@@ -56,7 +57,7 @@ const Todo = () => {
             type="text"
             placeholder="Search Todos"
             value={searchTerm}
-            onChange={(e) => handleSearchChange()}
+            onChange={(e) => handleSearchChange(e.target.value)}
           />
           <button className="ml-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
             <BsSearch size={20} />
