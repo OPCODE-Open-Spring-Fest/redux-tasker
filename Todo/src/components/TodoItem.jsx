@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import {
-
+  toggleTodo,
   removeTodo,
- 
+  markCompleted,
   markIncomplete,
 } from '../redux/actions';
 import { FaToggleOn, FaToggleOff, FaTrash, FaCheck, FaTimes } from 'react-icons/fa';
@@ -23,7 +23,7 @@ const TodoItem = ({ todo, index }) => {
       <div className='space-x-3 ml-8'>
         <button
           className="mr-2 text-sm bg-blue-500 text-white sm:px-2 px-1 py-1 rounded"
-          onClick={() => {}}
+          onClick={() => dispatch(toggleTodo(index))}
         >
           {todo.completed ? <FaToggleOff /> : <FaToggleOn />}
         </button>
@@ -36,7 +36,7 @@ const TodoItem = ({ todo, index }) => {
         {!todo.completed && (
           <button
             className="text-sm bg-green-500 text-white sm:px-2 px-1 py-1 rounded"
-            onClick={() => {}}
+            onClick={() => dispatch(markCompleted(index))}
           >
             <FaCheck />
           </button>
